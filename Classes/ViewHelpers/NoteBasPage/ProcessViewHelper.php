@@ -2,7 +2,6 @@
 
 namespace Libeo\LboFootnote\ViewHelpers\NoteBasPage;
 
-use FluidTYPO3\Vhs\Traits\TemplateVariableViewHelperTrait;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
@@ -11,7 +10,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 class ProcessViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
-    use TemplateVariableViewHelperTrait;
 
     /**
      * @var boolean
