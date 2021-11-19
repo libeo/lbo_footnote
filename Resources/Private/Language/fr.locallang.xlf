@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2021-06-23T11:36:30Z">
+        <body>
+             <trans-unit id="note_bas_page.link_accessibility" xml:space="preserve" approved="yes">
+                <target state="translated">>Lire le contenu de la note numéro </target>
+             </trans-unit>
+             <trans-unit id="note_bas_page.list_accessibility_title" xml:space="preserve" approved="yes">
+                <target state="translated">>Note de bas de page numéro </target>
+             </trans-unit>
+             <trans-unit id="note_bas_page.list_accessibility_link" xml:space="preserve" approved="yes">
+                <target state="translated">>Retour à la référence de la note numéro </target>
+             </trans-unit>
+             <trans-unit id="note_bas_page.close_mobile_note" xml:space="preserve" approved="yes">
+                <target state="translated">>Fermer la note de bas de page</target>
+             </trans-unit>
+        </body>
+    </file>
+</xliff>

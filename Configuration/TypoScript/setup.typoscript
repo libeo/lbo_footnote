@@ -1,0 +1,8 @@
+plugin.tx_lbofootnote {
+    view {
+        templateRootPaths.0 = EXT:lbo_footnote/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_lbofootnote.view.templateRootPath}
+    }
+}
+
+lib.parseFunc_RTE.allowTags := addToList(footquote)

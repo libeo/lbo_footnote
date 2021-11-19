@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2021-06-23T11:36:30Z">
+        <body>
+             <trans-unit id="note_bas_page.link_accessibility" xml:space="preserve" approved="yes">
+                <source>Read the content of the note </source>
+             </trans-unit>
+             <trans-unit id="note_bas_page.list_accessibility_title" xml:space="preserve" approved="yes">
+                <source>Footer note number </source>
+             </trans-unit>
+             <trans-unit id="note_bas_page.list_accessibility_link" xml:space="preserve" approved="yes">
+                <source>Back to the reference of the note </source>
+             </trans-unit>
+             <trans-unit id="note_bas_page.close_mobile_note" xml:space="preserve" approved="yes">
+                <source state="translated">>Close footnote</source>
+             </trans-unit>
+        </body>
+    </file>
+</xliff>

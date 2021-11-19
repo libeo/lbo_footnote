@@ -1,0 +1,25 @@
+{
+    "name": "libeo/lbo_footnote",
+    "type": "typo3-cms-extension",
+    "description": "Display footnote defined in content of rich text editor of contents",
+    "license": "AGPL-3.0",
+    "authors": [
+        {
+            "name": "Pierre Boivin",
+            "email": "pierre.boivin@libeo.com"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^10.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Libeo\\LboFootnote\\": "Classes"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "lbo_footnote"
+        }
+    }
+}

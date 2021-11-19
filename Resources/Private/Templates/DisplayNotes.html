@@ -1,0 +1,22 @@
+<div class="container">
+    <ul class="list-notes-bas-page">
+        <f:for each="{notes}" as="note" iteration="iteration">
+            <f:variable name="index">{iteration.index + 1}</f:variable>
+            <li class="note-bas-page" id="note-{prefix}{index}">
+                <div class="visuallyHidden">
+                    <f:translate key="note_bas_page.list_accessibility_title"/>
+                    {index}
+                </div>
+                <div class="d-flex flex-row-reverse">
+                    <span><f:format.raw>{note}</f:format.raw></span>
+                    <span>
+                        <a href="#link-note-{prefix}{index}">
+                            <span class="visuallyHidden"><f:translate key="note_bas_page.list_accessibility_link"/></span>
+                            {index}
+                        </a>
+                    </span>
+                </div>
+            </li>
+        </f:for>
+    </ul>
+</div>
