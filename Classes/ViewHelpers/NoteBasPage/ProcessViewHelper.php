@@ -18,7 +18,7 @@ class ProcessViewHelper extends AbstractViewHelper
 
     public function initializeArguments()
     {
-        $this->registerArgument('noteBasTableau', 'bool', 'Si les notes de bas de tableau sont affiché sous leur tableaux respectifs', false);
+        $this->registerArgument('noteBasTableau', 'bool', 'Si les notes de bas de tableau sont affichées sous leur tableaux respectifs', false);
     }
 
     /**
@@ -70,6 +70,7 @@ class ProcessViewHelper extends AbstractViewHelper
         }
 
         $pattern = '/\<footquote content=\"([^"]*)\"\>(.*?)<\/footquote\>/im';
+        $content = html_entity_decode($content);
         preg_match_all($pattern, $content, $matchesFootquote);
 
         /** @var NoteBasPageRepository $noteBasPageRepository */
