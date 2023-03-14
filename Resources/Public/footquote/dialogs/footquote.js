@@ -45,12 +45,13 @@ CKEDITOR.dialog.add( 'footquoteDialog', function( editor ) {
 					{
 						// Text input field for the footquote content (explanation).
 						type: 'textarea',
+						onShow : ckeditorAddToTextarea,
 						id: 'content',
 						label: lang.footquoteDescription,
 
 						// Require the content attribute to be enabled.
 						requiredContent: 'footquote[content]',
-						validate: CKEDITOR.dialog.validate.notEmpty( lang.explanationCannotBeEmpty ),
+						validate: notEmptyValidator(lang.explanationCannotBeEmpty),
 
 						// Called by the main setupContent method call on dialog initialization.
 						setup: function( element ) {
@@ -60,7 +61,10 @@ CKEDITOR.dialog.add( 'footquoteDialog', function( editor ) {
 
 						// Called by the main commitContent method call on dialog confirmation.
 						commit: function( element ) {
-							content = this.getValue().replace(/[\n\r]/g, '<br>');
+							var instance = getInstanceTextarea();
+							if(instance){
+								content = CKEDITOR.instances[instance].getData().replace(/[\n\r]/g, '<br>').replace(/"/g, "'").replace(/<p>/g, "").replace(/<\/p>/g, "");
+							}
 							element.setAttribute( "content", content);
 						}
 					}
@@ -119,4 +123,58 @@ CKEDITOR.dialog.add( 'footquoteDialog', function( editor ) {
 				editor.insertElement( footquote );
 		}
 	};
+
+	// Add CKEditor on textarea "Description"
+	function ckeditorAddToTextarea() {
+		var textareaDialog = $(".cke_dialog_body").find("textarea").attr("id");
+		var instance = getInstanceTextarea();
+
+		// Destroy the instance if it exists
+		if(instance){
+			CKEDITOR.instances[instance].destroy(true);
+		}
+
+		// Recreate instance
+		CKEDITOR.replace(textareaDialog, {
+			toolbarGroups: [
+				{ name: 'links', groups: [ 'links' ] }
+			],
+			stylesSet: [],
+			extraPlugins : 'typo3link',
+			height: '100px',
+			width: '396px',
+			removeButtons :'Anchor'
+		});
+
+		// Get the new instance name and use Browserlink
+		instance = getInstanceTextarea();
+		CKEDITOR.instances[instance].config.typo3link = editor.config.typo3link;}
 });
+
+
+
+// Custom validation on CKEditor textarea
+function notEmptyValidator(msg) {
+	return function () {
+		var content = "";
+		var instance = getInstanceTextarea();
+		if(instance){
+			content = CKEDITOR.instances[instance].getData();
+		}
+		if( !content ){
+			return msg;
+		}
+	};
+}
+
+// Get ID of the textarea instances
+function getInstanceTextarea(){
+	var textareaDialog = $(".cke_dialog_body").find("textarea").attr("id");
+	var instance = "";
+	for(var i in CKEDITOR.instances) {
+		if(CKEDITOR.instances[i].name == textareaDialog){
+			instance = i;
+		}
+	}
+	return instance;
+}
