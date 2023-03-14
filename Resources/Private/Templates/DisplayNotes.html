@@ -8,7 +8,7 @@
                     {index}
                 </div>
                 <div class="d-flex flex-row-reverse">
-                    <span><f:format.raw>{note}</f:format.raw></span>
+                    <span><f:format.html parseFuncTSPath="lib.parseFunc">{note}</f:format.html></span>
                     <span>
                         <a href="#link-note-{prefix}{index}">
                             <span class="visuallyHidden"><f:translate key="note_bas_page.list_accessibility_link"/></span>
