@@ -70,7 +70,6 @@ class ProcessViewHelper extends AbstractViewHelper
         }
 
         $pattern = '/\<footquote content=\"([^"]*)\"\>(.*?)<\/footquote\>/im';
-        $content = html_entity_decode($content);
         preg_match_all($pattern, $content, $matchesFootquote);
 
         /** @var NoteBasPageRepository $noteBasPageRepository */
