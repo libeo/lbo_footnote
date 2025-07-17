@@ -3,15 +3,15 @@
         <f:for each="{notes}" as="note" iteration="iteration">
             <f:variable name="index">{iteration.index + 1}</f:variable>
             <li class="note-bas-page" id="note-{prefix}{index}">
-                <div class="visuallyHidden">
-                    <f:translate key="note_bas_page.list_accessibility_title"/>
+                <div class="visuallyhidden">
+                    <f:translate key="note_bas_page.list_accessibility_title" extensionName="lbo_footnote" />
                     {index}
                 </div>
                 <div class="d-flex flex-row-reverse">
                     <span><f:format.html parseFuncTSPath="lib.parseFunc">{note}</f:format.html></span>
                     <span>
                         <a href="#link-note-{prefix}{index}">
-                            <span class="visuallyHidden"><f:translate key="note_bas_page.list_accessibility_link"/></span>
+                            <span class="visuallyhidden"><f:translate key="note_bas_page.list_accessibility_link" extensionName="lbo_footnote" /></span>
                             {index}
                         </a>
                     </span>
