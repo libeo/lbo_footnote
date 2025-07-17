@@ -1,14 +1,19 @@
-
 editor:
-  externalPlugins:
-    footquote:
-      resource: "EXT:lbo_footnote/Resources/Public/footquote/plugin.js"
   config:
+    importModules:
+      - { 'module': '@libeo/lbo_footnote/footquote', 'exports': ['Footquote'] }
     extraAllowedContent : "footquote(*)[*]; span(*)[*]; p(*)[*]; div(*)[*]; a(*)[*]"
     format_tags: "p;h2;h3;h4;h5;h6;footquote"
     format_footquote: { name: "Note de bas de page", element: 'footquote' }
     allowTags:
       - footquote
+      
+    toolbar:
+      items:
+        - footquote
+        
+    extraPlugins:
+      - Footquote
 
 processing:
   allowTags:

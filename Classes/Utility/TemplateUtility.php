@@ -1,8 +1,10 @@
 <?php
 
-namespace Libeo\LboFootnote\ViewHelpers\NoteBasPage;
+namespace Libeo\LboFootnote\Utility;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\View\ViewFactoryData;
+use TYPO3\CMS\Core\View\ViewFactoryInterface;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Fluid\View\StandaloneView;
@@ -53,7 +55,6 @@ class TemplateUtility
         $setting = $configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
         $typoscriptView = $setting['plugin.']['tx_lbofootnote.']['view.'];
 
-        /** @var StandaloneView $view */
         $view = GeneralUtility::makeInstance(StandaloneView::class);
         $view->setTemplateRootPaths($typoscriptView['templateRootPaths.']);
 
