@@ -1,4 +1,5 @@
-import { Plugin, icons } from "@ckeditor/ckeditor5-core";
+import { Plugin } from "@ckeditor/ckeditor5-core";
+import { IconTodoList } from "@ckeditor/ckeditor5-icons";
 import { ButtonView, ContextualBalloon } from '@ckeditor/ckeditor5-ui';
 
 import FormView from './footquoteview.js';
@@ -25,7 +26,7 @@ export default class FootquoteUI extends Plugin {
       button.label = t( 'insertFootquote' );
       button.tooltip = true;
       button.withText = false;
-      button.icon = icons.todoList
+      button.icon = IconTodoList
 
       // Show the UI on button click.
       this.listenTo( button, 'execute', () => {
